@@ -20,13 +20,14 @@ imputer = Imputer(missing_values='NaN',strategy='mean',axis=0)
 imputer.fit(x[:, 1:3])
 x[:, 1:3]= imputer.transform(x[:, 1:3])
 
-#Encoding chategorical datas(labels) into numbers for calculations
+#Encoding categorical datas(labels) into numbers for calculations
 from sklearn.preprocessing import LabelEncoder , OneHotEncoder
 labelencoder_x = LabelEncoder()
 x[:, 0] = labelencoder_x.fit_transform(x[:, 0])
 onehotencoder = OneHotEncoder(categorical_features=[0])
 x = onehotencoder.fit_transform(x).toarray()
 
+#encoding dependent variable
 labelencoder_y = LabelEncoder()
 y = labelencoder_y.fit_transform(y)
 
