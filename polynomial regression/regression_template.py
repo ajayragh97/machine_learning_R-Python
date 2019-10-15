@@ -23,8 +23,11 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=1/3,random_s
 #feature scaling
 """from sklearn.preprocessing import StandardScaler
 sc_x = StandardScaler()
+sc_y = StandardScaler()
 x_train = sc_x.fit_transform(x_train)
-x_test = sc_x.fit_transform(x_test) """
+x_test = sc_x.fit_transform(x_test)
+y_train = sc_y.fit_transform(y_train)
+y_test = sc_y.fit_transform(y_test) """
 
 #fitting dataset to  regression model
 
