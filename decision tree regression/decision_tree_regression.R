@@ -13,7 +13,6 @@ dataset = read.csv('Position_Salaries.csv')
 
 
 #fitting  regression model to dataset
-#create regressor hhere
 #uncomment next install line if package is not preinstalled
 #install.packages('rpart')
 library(rpart)

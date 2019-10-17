@@ -30,14 +30,19 @@ y_train = sc_y.fit_transform(y_train)
 y_test = sc_y.fit_transform(y_test) """
 
 #fitting dataset to  regression model
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state = 0)
+regressor.fit(x,y)
 
 
-#predicting results with polynomial regression model
-y_pred = regressor.predict(x)
+#predicting results with decision tree regression model
+y_pred = regressor.predict(6.5)
 
 #visualising the regression model results
+x_grid = np.arange(min(x),max(x),0.01)
+x_grid = x_grid.reshape((len(x_grid),1))
 plt.scatter(x, y,color = 'red')
-plt.plot(x,regressor.predict(x),color = 'blue')
+plt.plot(x_grid,regressor.predict(x_grid),color = 'blue')
 plt.title('regression model plot')
 plt.xlabel('position level')
 plt.ylabel('salary')
