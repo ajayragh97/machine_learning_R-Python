@@ -18,7 +18,7 @@ dataset = read.csv('Position_Salaries.csv')
 #install.packages('randomForest')
 library(randomForest)
 set.seed(1234)
-regressor = randomForest(x = dataset[1],y = dataset$Salary, ntree = 10 )
+regressor = randomForest(x = dataset[1],y = dataset$Salary, ntree = 100 )
 
 #predicting a new result with the random forest regression model
 y_pred = predict(regressor , data.frame(Level = 6.5))
